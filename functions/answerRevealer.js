@@ -25,6 +25,6 @@ JSON.parse = function (e, t) {
                 }
             });
         }
-    } catch (e) { }
+    } catch (e) { debug(`🚨 Error @ answerRevealer.js\n${e}`); }
     return body;
 };

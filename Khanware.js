@@ -1,5 +1,5 @@
-const ver = "V3.0.6 dev";
-const repoPath = "https://raw.githubusercontent.com/Niximkk/Khanware/refs/heads/dev/"
+const ver = "V3.0.6";
+const repoPath = "https://raw.githubusercontent.com/Niximkk/Khanware/refs/heads/main/"
 
 
 let device = {

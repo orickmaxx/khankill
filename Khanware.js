@@ -1,6 +1,7 @@
-const ver = "V3.0.7 dev";
-const repoPath = "https://raw.githubusercontent.com/Niximkk/Khanware/refs/heads/dev/"
+const ver = "V3.0.7";
+let isDev = false;
 
+const repoPath = `https://raw.githubusercontent.com/Niximkk/Khanware/refs/heads/${isDev ? "dev/" : "main/"}`;
 
 let device = {
     mobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Windows Phone|Mobile|Tablet|Kindle|Silk|PlayBook|BB10/i.test(navigator.userAgent),
@@ -76,7 +77,7 @@ function setupMenu() {
     loadScript(repoPath+'visuals/mainMenu.js', 'mainMenu');
     loadScript(repoPath+'visuals/statusPanel.js', 'statusPanel');
     loadScript(repoPath+'visuals/widgetBot.js', 'widgetBot');
-    loadScript(repoPath+'visuals/devTab.js', 'devTab');
+    if(isDev) loadScript(repoPath+'visuals/devTab.js', 'devTab');
 }
 
 /* Main Functions */ 

@@ -1,6 +1,11 @@
 # 🌿 Khanware
 ### The most advanced Khan Academy cheat.
 
+🙂 Stable:
+```js
+javascript:fetch("https://raw.githubusercontent.com/Niximkk/Khanware/refs/heads/main/Khanware.js").then(t=>t.text()).then(eval);
+```
+🔧 Dev (beta):
 ```js
 javascript:fetch("https://raw.githubusercontent.com/Niximkk/Khanware/refs/heads/dev/Khanware.js").then(t=>t.text()).then(eval);
 ```

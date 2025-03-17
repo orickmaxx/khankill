@@ -101,6 +101,8 @@ plppdo.on('domChanged', () => {
             `);
         }
         createToggle('Debug Mode', 'Enables debugging logs', 'debugMode', window.debugMode || false);
+        createToggle('Disable Security', 'Enables Right click and Ctrl + Shift + I again', 'disableSecurity', window.disableSecurity || false);
+        createToggle('Disable Ping Request', 'Disables the request triggered every 1 second to find out the ping in ms', 'disablePing', window.disablePing || false);
     });
 
     ul.appendChild(devTab);

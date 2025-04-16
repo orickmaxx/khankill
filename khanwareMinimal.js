@@ -17,7 +17,7 @@ new MutationObserver((mutationsList) => { for (let mutation of mutationsList) if
 /* Misc Functions */
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 const playAudio = url => { const audio = new Audio(url); audio.play(); };
-const findAndClickByClass = className => { const element = document.querySelector(`.${className}`); if (element) { element.click(); sendToast(`⭕ Pressionando ${className}...`, 1000); } }
+const findAndClickBySelector = selector => { const element = document.querySelector(selector); if (element) { element.click(); sendToast(`⭕ Pressionando ${selector}...`, 1000); } };
 
 function sendToast(text, duration=5000, gravity='bottom') { Toastify({ text: text, duration: duration, gravity: gravity, position: "center", stopOnFocus: true, style: { background: "#000000" } }).showToast(); };
 
@@ -113,16 +113,25 @@ function setupMain(){
 
     /* AutoAnswer */
     (function () {
-        const baseClasses = ["_s6zfc1u", "_4i5p5ae", "_ssxvf9l", "_6t500vf"];
+        const baseSelectors = [
+            `[data-testid="choice-icon__library-choice-icon"]`,
+            `[data-testid="exercise-check-answer"]`, 
+            `[data-testid="exercise-next-question"]`, 
+            `._1udzurba`
+        ];
+        
         khanwareDominates = true;
-
+        
         (async () => { 
             while (khanwareDominates) {
-                const classToCheck = [...baseClasses];
-                for (const q of classToCheck) {
-                    findAndClickByClass(q);
-                    const element = document.getElementsByClassName(q)[0];
-                    if (element && element.textContent === "Mostrar resumo") {
+                const selectorsToCheck = [...baseSelectors];
+    
+                if (features.nextRecomendation)  device.mobile ? baseSelectors.push("._1ffxxzsw") : baseSelectors.push("._1ffxxzsw");
+                if (features.repeatQuestion) baseSelectors.push("._ypgawqo");
+    
+                for (const q of selectorsToCheck) {
+                    findAndClickBySelector(q);
+                    if (document.querySelector(q+"> div") && document.querySelector(q+"> div").innerText === "Mostrar resumo") {
                         sendToast("🎉 Exercício concluído!", 3000);
                         playAudio("https://r2.e-z.host/4d0a0bea-60f8-44d6-9e74-3032a64a9f32/4x5g14gj.wav");
                     }

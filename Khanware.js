@@ -1,5 +1,5 @@
-const ver = "V3.0.8";
-let isDev = false;
+const ver = "V3.0.9";
+let isDev = true;
 
 const repoPath = `https://raw.githubusercontent.com/Niximkk/Khanware/refs/heads/${isDev ? "dev/" : "main/"}`;
 
@@ -85,7 +85,7 @@ function setupMain(){
     loadScript(repoPath+'functions/questionSpoof.js', 'questionSpoof');
     loadScript(repoPath+'functions/videoSpoof.js', 'videoSpoof');
     loadScript(repoPath+'functions/minuteFarm.js', 'minuteFarm');
-    loadScript(repoPath+'functions/spoofUser.js', 'spoofUser');
+    // [POTENTIALLY BROKEN] loadScript(repoPath+'functions/spoofUser.js', 'spoofUser');
     loadScript(repoPath+'functions/answerRevealer.js', 'answerRevealer');
     loadScript(repoPath+'functions/rgbLogo.js', 'rgbLogo');
     loadScript(repoPath+'functions/customBanner.js', 'customBanner');

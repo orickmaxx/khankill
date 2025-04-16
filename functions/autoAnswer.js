@@ -1,4 +1,4 @@
-const baseClasses = ["_19uopuu", "_ssxvf9l", "_1r8cd7xe", "_1yok8f4"];
+const baseClasses = ["_s6zfc1u", "_4i5p5ae", "_ssxvf9l", "_6t500vf"];
 khanwareDominates = true;
 
 (async () => { 
@@ -7,7 +7,7 @@ khanwareDominates = true;
             
             const classToCheck = [...baseClasses];
 
-            if (features.nextRecomendation)  device.mobile ? classToCheck.push("_ixuggsz") : classToCheck.push("_1kkrg8oi");
+            if (features.nextRecomendation)  device.mobile ? classToCheck.push("_ixuggsz") : classToCheck.push("_b0df5a4");
             if (features.repeatQuestion) classToCheck.push("_ypgawqo");
 
             for (const q of classToCheck) {
@@ -19,6 +19,6 @@ khanwareDominates = true;
                 }
             }
         }
-        await delay(featureConfigs.autoAnswerDelay * 750);
+        await delay(featureConfigs.autoAnswerDelay * 800);
     }
 })();

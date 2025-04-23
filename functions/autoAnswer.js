@@ -13,7 +13,7 @@ khanwareDominates = true;
             
             const selectorsToCheck = [...baseSelectors];
 
-            if (features.nextRecomendation) baseSelectors.push("._1ffxxzsw")
+            if (features.nextRecomendation) baseSelectors.push("._hxicrxf")
             if (features.repeatQuestion) baseSelectors.push("._ypgawqo");
 
             for (const q of selectorsToCheck) {

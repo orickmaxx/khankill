@@ -117,7 +117,8 @@ function setupMain(){
             `[data-testid="choice-icon__library-choice-icon"]`,
             `[data-testid="exercise-check-answer"]`, 
             `[data-testid="exercise-next-question"]`, 
-            `._1udzurba`
+            `._1udzurba`,
+            `._awve9b`
         ];
         
         khanwareDominates = true;
@@ -125,9 +126,6 @@ function setupMain(){
         (async () => { 
             while (khanwareDominates) {
                 const selectorsToCheck = [...baseSelectors];
-    
-                if (features.nextRecomendation)  device.mobile ? baseSelectors.push("._1ffxxzsw") : baseSelectors.push("._1ffxxzsw");
-                if (features.repeatQuestion) baseSelectors.push("._ypgawqo");
     
                 for (const q of selectorsToCheck) {
                     findAndClickBySelector(q);

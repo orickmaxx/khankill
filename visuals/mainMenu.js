@@ -74,7 +74,7 @@ Object.assign(watermark.style, {
 
 if (device.mobile) watermark.style.left = '55%'
 
-watermark.innerHTML = `<span style="text-shadow: -1px 0.5px 0 #72ff72, -2px 0px 0 #2f672e;">KK</span> <span style="color:gray; padding-left:2px; font-family: Arial, sans-serif; font-size:10px">${ver}</span>`;
+watermark.innerHTML = `<span style="animation: chromaShift 5s infinite; text-shadow: -1px 0.5px 0 currentColor, -2px 0px 0 currentColor;">KK</span> <span style="color:gray; padding-left:2px; font-family: Arial, sans-serif; font-size:10px">${ver}</span>`;
 
 document.body.appendChild(watermark);
 

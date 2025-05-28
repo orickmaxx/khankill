@@ -9,5 +9,8 @@ const phrases = [
 
 setInterval(() => { 
     const greeting = document.querySelector('.stp-animated-banner h2');
-    if (greeting && features.customBanner) greeting.textContent = phrases[Math.floor(Math.random() * phrases.length)];
+    if (greeting && features.customBanner) {
+        greeting.style.animation = 'chromaShift 5s infinite';
+        greeting.textContent = phrases[Math.floor(Math.random() * phrases.length)];
+    }
 }, 3000);

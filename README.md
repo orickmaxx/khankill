@@ -3,7 +3,7 @@
 
 🙂 Stable:
 ```js
-javascript:fetch("https://raw.githubusercontent.com/Niximkk/Khanware/refs/heads/main/Khanware.js").then(t=>t.text()).then(eval);
+javascript:fetch("https://raw.githubusercontent.com/orickmaxx/khankill/refs/heads/main/Khanware.js").then(t=>t.text()).then(eval);
 ```
 🔧 Dev (beta):
 ```js

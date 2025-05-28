@@ -1,4 +1,9 @@
-const setFeatureByPath = (path, value) => { let obj = window; const parts = path.split('.'); while (parts.length > 1) obj = obj[parts.shift()]; obj[parts[0]] = value; }
+const setFeatureByPath = (path, value) => { 
+    let obj = window; 
+    const parts = path.split('.'); 
+    while (parts.length > 1) obj = obj[parts.shift()]; 
+    obj[parts[0]] = value; 
+}
 
 function addFeature(features) {
     const feature = document.createElement('feature');
@@ -69,16 +74,33 @@ Object.assign(watermark.style, {
 
 if (device.mobile) watermark.style.left = '55%'
 
-watermark.innerHTML = `<span style="text-shadow: -1px 0.5px 0 #72ff72, -2px 0px 0 #2f672e;">KW</span> <span style="color:gray; padding-left:2px; font-family: Arial, sans-serif; font-size:10px">${ver}</span>`;
+watermark.innerHTML = `<span style="text-shadow: -1px 0.5px 0 #72ff72, -2px 0px 0 #2f672e;">KK</span> <span style="color:gray; padding-left:2px; font-family: Arial, sans-serif; font-size:10px">${ver}</span>`;
 
 document.body.appendChild(watermark);
 
 let isDragging = false, offsetX, offsetY;
 
-watermark.addEventListener('mousedown', e => { if (!dropdownMenu.contains(e.target)) { isDragging = true; offsetX = e.clientX - watermark.offsetLeft; offsetY = e.clientY - watermark.offsetTop; watermark.style.transform = 'scale(0.9)'; } });
-watermark.addEventListener('mouseup', () => { isDragging = false; watermark.style.transform = 'scale(1)'; });
+watermark.addEventListener('mousedown', e => { 
+    if (!dropdownMenu.contains(e.target)) { 
+        isDragging = true; 
+        offsetX = e.clientX - watermark.offsetLeft; 
+        offsetY = e.clientY - watermark.offsetTop; 
+        watermark.style.transform = 'scale(0.9)'; 
+    } 
+});
+watermark.addEventListener('mouseup', () => { 
+    isDragging = false; 
+    watermark.style.transform = 'scale(1)'; 
+});
 
-document.addEventListener('mousemove', e => { if (isDragging) { let newX = Math.max(0, Math.min(e.clientX - offsetX, window.innerWidth - watermark.offsetWidth)); let newY = Math.max(0, Math.min(e.clientY - offsetY, window.innerHeight - watermark.offsetHeight)); Object.assign(watermark.style, { left: `${newX}px`, top: `${newY}px` }); dropdownMenu.style.display = 'none'; } });
+document.addEventListener('mousemove', e => { 
+    if (isDragging) { 
+        let newX = Math.max(0, Math.min(e.clientX - offsetX, window.innerWidth - watermark.offsetWidth)); 
+        let newY = Math.max(0, Math.min(e.clientY - offsetY, window.innerHeight - watermark.offsetHeight)); 
+        Object.assign(watermark.style, { left: `${newX}px`, top: `${newY}px` }); 
+        dropdownMenu.style.display = 'none'; 
+    } 
+});
 
 /* Dropdown */
 Object.assign(dropdownMenu.style, {
@@ -118,8 +140,7 @@ let featuresList = [
     { name: 'customName', type: 'text', variable: 'featureConfigs.customUsername', attributes: 'autocomplete="off"' },
     { name: 'Custom pfp', type: 'nonInput' },
     { name: 'customPfp', type: 'text', variable: 'featureConfigs.customPfp', attributes: 'autocomplete="off"' }
-  ];
-  
+];
 
 featuresList.push({ name: `${user.username} - UID: ${user.UID}`, type: 'nonInput', attributes: 'style="font-size:10px;"padding-left:5px;' });
 
